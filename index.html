@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ToDo App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>ToDo List</h1>
+
+    <input id="input" placeholder="Новая задача">
+    <button id="addBtn">Добавить</button>
+
+    <input id="searchInput" placeholder="Поиск задач">
+    <input id="deadlineInput" type="date">
+
+    <select id="priorityInput">
+      <option value="normal">Обычная</option>
+      <option value="important">Важная</option>
+      <option value="urgent">Срочная</option>
+    </select>
+    <button id="langBtn">🌍 EN</button>
+
+    <select id="categoryInput">
+  <option value="study">📚 Учёба</option>
+  <option value="work">💼 Работа</option>
+  <option value="personal">🏠 Личное</option>
+  <option value="games">🎮 Игры</option>
+	</select>
+
+    <p id="counter"></p>
+
+    <div class="progress-bar">
+      <div id="progress"></div>
+    </div>
+
+    <p id="priorityStats"></p>
+
+
+    <div>
+      <button id="allBtn">Все</button>
+      <button id="activeBtn">Активные</button>
+      <button id="doneBtn">Выполненные</button>
+    </div>
+
+    <button id="clearBtn">Очистить выполненные</button>
+    <button id="themeBtn">🌙 Theme</button>
+    <ul id="list"></ul>
+  </div>
+
+  <div id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

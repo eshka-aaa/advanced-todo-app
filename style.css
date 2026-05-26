@@ -1,0 +1,300 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  margin-top: 50px;
+  background: linear-gradient(135deg,#f5f5f5, #e0e0e0);
+}
+
+.container {
+  width: 450px;
+  margin: 50px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input,
+select {
+  padding: 10px;
+  width: 70%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
+  transform: translateY(-2px) scale(1.03);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 300px;
+  gap: 5px;
+  transition: 0.3s;
+  animation: fadeIn 0.3s;
+}
+
+li:hover {
+  transform: scale(1.02);
+  background: #f9f9f9;
+}
+
+li div {
+  display: flex;
+  gap: 5px;
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.normal {
+  border-left: 5px solid #999;
+}
+
+.important {
+  border-left: 5px solid orange;
+}
+
+.urgent {
+  border-left: 5px solid red;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+#progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, limegreen, green);
+  transition: 0.3s;
+}
+
+small {
+  display: block;
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.today {
+  outline: 2px solid gold;
+}
+
+.overdue {
+  outline: 2px solid red;
+}
+
+.removing {
+  animation: removeTask 0.3s forwards;
+}
+
+/* Dark mode */
+.dark {
+  background: linear-gradient(135deg, #1e1e1e, #121212);
+  color: white;
+}
+
+.dark .container {
+  background: #333;
+  color: white;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+}
+
+.dark li {
+  background: #444;
+  color: white;
+  border-color: #666;
+}
+
+.dark li.normal {
+  border-left: 5px solid #999;
+}
+
+.dark li.important {
+  border-left: 5px solid orange;
+}
+
+.dark li.urgent {
+  border-left: 5px solid red;
+}
+
+.dark button {
+  background: #555;
+  color: white;
+}
+
+.dark input,
+.dark select {
+  background: #444;
+  color: white;
+  border: 1px solid #777;
+}
+
+.dark input::placeholder {
+  color: #aaa;
+}
+
+/* Toast */
+#toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #333;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+#toast.show {
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes removeTask {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  body {
+    margin-top: 20px;
+  }
+
+  .container {
+    width: 90%;
+    padding: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  input,
+  select,
+  button {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  li {
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  li div {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.delete-btn {
+	background: #4c0099 ;
+	color: white;
+}
+
+.edit-btn {
+	background: #4da6ff;
+	color: white;
+}
+
+.pin-btn {
+	background: gold;
+}
+
+.pinned{
+	box-shadow: 0 0 10px gold;
+}
+
+.study {
+	background: #e3f2fd;
+}
+
+.work {
+	background: #0000ff ;
+}
+
+.personal {
+	background: #9933ff;
+}
+
+.games {
+	background: #cc0000;
+}
+
+.dark .pin-btn {
+	background: gold;
+	color: black;
+}
+
+.dark .edit-btn{
+	background: #4da6ff;
+	color: white;
+}
+
+.dark .delete-btn{
+	background: #4c0099;
+	color: white;
+}
+
+input::placeholder{
+	transition: 0.3s;
+}
+
+input:focus::placeholder{
+	opacity: 0.5;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(77, 166, 255, 0.5);
+}
